@@ -1,4 +1,7 @@
 # vim: set filetype=sh:
+
+PATH=/usr/local/sbin:$PATH
+
 #################### COLORED MAN ######################################
 # less env variables to make less a bit nicer to read
 # https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages
