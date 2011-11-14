@@ -1,6 +1,6 @@
 # vim: set filetype=sh:
 
-PATH=/usr/local/sbin:$PATH
+PATH=/usr/local/sbin:/opt/local/bin:$PATH
 
 #################### COLORED MAN ######################################
 # less env variables to make less a bit nicer to read
