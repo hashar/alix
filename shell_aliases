@@ -1,0 +1,12 @@
+# Aliases to some usual commands
+# This file content should be kept compatible with bash / zsh ...
+
+# ls with colors (-G: Mac OS X) and file type indicator (-F)
+alias ls='ls -G -F'
+alias ll='ls -l'
+
+alias tree='tree -ACF'
+
+# shortcuts
+alias svn_pending_log='svn log -rBASE:HEAD'
+alias svn_pending_diff='svn diff -rBASE:HEAD'
