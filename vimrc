@@ -8,3 +8,5 @@ set shiftwidth=4
 
 set hlsearch  " highlight searches
 set smartcase
+
+set ruler
