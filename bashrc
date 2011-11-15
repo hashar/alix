@@ -31,3 +31,8 @@ shopt -s cdspell
 if [ -f `brew --prefix`/etc/bash_completion ]; then
 	. `brew --prefix`/etc/bash_completion
 fi
+
+# Source local user changes if any
+if [ -f $ALIX_DIR/bashrc_local ]; then
+	. $ALIX_DIR/bashrc_local
+fi
