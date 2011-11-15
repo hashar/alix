@@ -1,0 +1,11 @@
+# vim: set filetype=sh:
+#
+# bashrc_local.sample
+# Example for a bashrc_local file. This is the last bash file to be sourced
+# by ALIX. So you can override ALIX default settings easily by renaming
+# this sample file as 'bashrc_local'
+#
+# Content example:
+# export CDPATH=/some/local/directory
+# alias myhost="ssh someone@private.host.tld"
+
