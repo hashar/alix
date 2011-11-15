@@ -11,15 +11,39 @@ ALIX_DIR=$(dirname $BASH_SOURCE)
 function parse_git_branch {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
+# Function guessing if we are in trunk or in a branches
+# A branch must be a direct subdirectory of a 'branches' directory
+function parse_svn_branch {
+	# Perl oneliner:
+	# (?|) to offer alternatives and keep group numbering
+	# (?:) do not capture this group. Let us exclude 'branches'
+	svn info 2> /dev/null | perl -ne 'print $1 if /^URL:.*(?|(trunk)|(?:branches)\/([^\/]+))/'
+}
+
+# Wrapper to look for both git & subversion branches
+# git takes precedence.
+function parse_repo_branch {
+	local GIT_BRANCH=$(parse_git_branch)
+	if [ -n "$GIT_BRANCH" ]; then
+		# Great we have found a git branch
+		echo -n $GIT_BRANCH
+	else
+		local SVN_BRANCH=$(parse_svn_branch)
+		if [ -n "$SVN_BRANCH" ]; then
+			# Add a 'svn:' prefix so we reminder to use svn and not git
+			echo -n "(svn:$(parse_svn_branch))"
+		fi
+	fi
+}
 
 # set the francy prompt with colors if wanted and using the
 # parse_git_branch function above.
 case "$TERM" in
 	xterm-color | xterm-256color)
-		PS1='\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_git_branch)\[\033[00m\]\$ '
+		PS1='\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_repo_branch)\[\033[00m\]\$ '
 		;;
 	*)
-		PS1='\u@\h:\w$(parse_git_branch)\$ '
+		PS1='\u@\h:\w$(parse_repo_branch)\$ '
 		;;
 esac
 
