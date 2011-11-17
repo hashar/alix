@@ -14,3 +14,12 @@ set ruler
 set modeline
 set modelines=5
 filetype plugin indent on
+
+" ###### FOLDING ############################################################
+set foldmethod=syntax
+set foldlevelstart=99  " default to unfolded
+" (un)fold with space bar
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
+vnoremap <Space> zf
+let php_folding = 2
+
