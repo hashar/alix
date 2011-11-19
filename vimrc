@@ -22,4 +22,4 @@ set foldlevelstart=99  " default to unfolded
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 vnoremap <Space> zf
 let php_folding = 2
-
+let javaScript_fold = 1
