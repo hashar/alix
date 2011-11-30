@@ -54,8 +54,10 @@ shopt -s cdspell
 
 # Enable bash completion as provided by Mac HomeBrew
 # Install using: brew install bash-completion.
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-	. `brew --prefix`/etc/bash_completion
+if [ -n "`which brew`" ]; then
+	if [ -f `brew --prefix`/etc/bash_completion ]; then
+		. `brew --prefix`/etc/bash_completion
+	fi
 fi
 
 # Source local user changes if any
