@@ -1,5 +1,11 @@
 syntax on
 set background=dark
+
+" highlight trailing whitespaces with a red background
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 colors pablo
 highlight String ctermfg=Magenta
 
