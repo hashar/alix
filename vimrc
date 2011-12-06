@@ -6,8 +6,8 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+autocmd ColorScheme * highlight String ctermfg=Magenta
 colors pablo
-highlight String ctermfg=Magenta
 
 set tabstop=4
 set shiftwidth=4
