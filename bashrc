@@ -11,7 +11,7 @@ ALIX_PLATFORM=`uname`
 # function to get the current git branch
 # copied from somewhere on the internet.
 function parse_git_branch {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 # Function guessing if we are in trunk or in a branches
 # A branch must be a direct subdirectory of a 'branches' directory
@@ -28,7 +28,7 @@ function parse_repo_branch {
 	local GIT_BRANCH=$(parse_git_branch)
 	if [ -n "$GIT_BRANCH" ]; then
 		# Great we have found a git branch
-		echo -n $GIT_BRANCH
+		echo -n "(git:$GIT_BRANCH)"
 	else
 		local SVN_BRANCH=$(parse_svn_branch)
 		if [ -n "$SVN_BRANCH" ]; then
