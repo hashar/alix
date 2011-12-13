@@ -33,7 +33,7 @@ function parse_repo_branch {
 		local SVN_BRANCH=$(parse_svn_branch)
 		if [ -n "$SVN_BRANCH" ]; then
 			# Add a 'svn:' prefix so we reminder to use svn and not git
-			echo -n "(svn:$(parse_svn_branch))"
+			echo -n "(svn:$SVN_BRANCH)"
 		fi
 	fi
 }
