@@ -17,6 +17,7 @@ export LESS_TERMCAP_us=$(printf "\e[1;32m")
 #################### Personal preferences #############################
 
 export PAGER="less"
+export EDITOR="vim"
 export VISUAL="vim"
 
 # Override messages to use the "C" language
@@ -26,3 +27,6 @@ export LC_MESSAGES="C"
 # Lighter directory in Mac OS X ls output
 #export LSCOLORS="gx"
 export LSCOLORS="eh"
+
+# fancy MySQL prompt
+export MYSQL_PS1="(\u@\h) [\d]> "
