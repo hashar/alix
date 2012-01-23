@@ -17,6 +17,10 @@ set smartcase
 
 set ruler
 
+" fancy tab completion from command line
+set wildmenu
+set wildmode=list:longest
+
 set modeline
 set modelines=5
 filetype plugin indent on
