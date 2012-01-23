@@ -21,6 +21,11 @@ set ruler
 set wildmenu
 set wildmode=list:longest
 
+" Make search case agnostic
+set ignorecase
+" Unless search string has an upper case character
+set smartcase
+
 set modeline
 set modelines=5
 filetype plugin indent on
