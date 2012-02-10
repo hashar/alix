@@ -30,6 +30,8 @@ set modeline
 set modelines=5
 filetype plugin indent on
 
+set showcmd
+
 " ###### FOLDING ############################################################
 set foldmethod=syntax
 set foldlevelstart=99  " default to unfolded
@@ -38,6 +40,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 vnoremap <Space> zf
 let php_folding = 2
 let javaScript_fold = 1
+let g:xml_syntax_folding = 1
 
 
 " Tip 804: Single tags file for a source tree
