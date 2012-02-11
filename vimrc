@@ -32,6 +32,18 @@ filetype plugin indent on
 
 set showcmd
 
+" ###### SYNTAX #############################################################
+
+" highlight doxygen syntax in comments
+let g:load_doxygen_syntax = 1
+" snippet grabbed from synload.vim to add PHP :-)
+au Syntax php
+    \ if (exists('b:load_doxygen_syntax') && b:load_doxygen_syntax)
+    \   || (exists('g:load_doxygen_syntax') && g:load_doxygen_syntax)
+    \   | runtime! syntax/doxygen.vim
+    \ | endif
+
+
 " ###### FOLDING ############################################################
 set foldmethod=syntax
 set foldlevelstart=99  " default to unfolded
