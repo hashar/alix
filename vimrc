@@ -42,6 +42,8 @@ au Syntax php
     \   || (exists('g:load_doxygen_syntax') && g:load_doxygen_syntax)
     \   | runtime! syntax/doxygen.vim
     \ | endif
+" overrides syntax/doxygen.vim defaults:
+hi def link doxygenComment Comment
 
 
 " ###### FOLDING ############################################################
