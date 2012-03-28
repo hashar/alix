@@ -1,0 +1,7 @@
+# Disable shadow behind windows screen captures
+# Tip from http://hints.macworld.com/article.php?story=20080629181121863
+defaults write com.apple.screencapture disable-shadow -bool true
+# To apply:
+#killall SystemUIServer
+# To revert:
+#defaults delete com.apple.screencapture disable-shadow
