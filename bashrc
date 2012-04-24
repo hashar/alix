@@ -38,11 +38,21 @@ function parse_repo_branch {
 	fi
 }
 
+# Specific to WMF cluster which use non human friendly hostname :-D
+function get_PS1_hostname {
+	if [ -n "$INSTANCENAME" ]; then
+		echo $INSTANCENAME;
+	else
+		echo "\h";
+	fi
+}
+
 # set the francy prompt with colors if wanted and using the
 # parse_git_branch function above.
+
 case "$TERM" in
 	xterm-color | xterm-256color)
-		PS1='\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_repo_branch)\[\033[00m\]\$ '
+		PS1='\[\033[01;35m\]\u@'$(get_PS1_hostname)'\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_repo_branch)\[\033[00m\]\$ '
 		;;
 	*)
 		PS1='\u@\h:\w$(parse_repo_branch)\$ '
