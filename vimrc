@@ -9,6 +9,14 @@ match ExtraWhitespace /\s\+$/
 autocmd ColorScheme * highlight String ctermfg=Magenta
 colors pablo
 
+" puppet tweaks
+autocmd BufRead,BufNewFile *.pp set filetype=puppet
+autocmd FileType puppet source $VIMRUNTIME/syntax/ruby.vim
+autocmd FileType puppet set foldmethod=indent
+autocmd FileType puppet set sw=2
+autocmd FileType puppet set ts=2
+
+
 set tabstop=4
 set shiftwidth=4
 
