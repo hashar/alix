@@ -67,7 +67,7 @@ function user_at_host_color {
 
 case "$TERM" in
 	xterm-color | xterm-256color)
-		PS1='\[\033['$(user_at_host_color)'\]\u@'$(get_PS1_hostname)'\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_repo_branch)\[\033[00m\]\$ '
+		PS1='\[\e]0;\u@\h: \w\a\]\[\033['$(user_at_host_color)'\]\u@'$(get_PS1_hostname)'\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_repo_branch)\[\033[00m\]\$ '
 		;;
 	*)
 		PS1='\u@\h:\w$(parse_repo_branch)\$ '
