@@ -1,3 +1,7 @@
+"
+" http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation
+"
+
 syntax on
 set background=dark
 
