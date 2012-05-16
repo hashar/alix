@@ -67,6 +67,8 @@ vnoremap <Space> zf
 let php_folding = 2
 let javaScript_fold = 1
 let g:xml_syntax_folding = 1
+let perl_fold = 1
+let perl_fold_blocks = 1
 
 
 " Tip 804: Single tags file for a source tree
