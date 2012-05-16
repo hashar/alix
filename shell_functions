@@ -6,3 +6,11 @@ function update-ssh-known-hosts () {
 	scp fenari.wikimedia.org:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
 }
 
+function gerrit() {
+	if [ -z "$1" ]; then
+		ARGS="--help"
+	else
+		ARGS="$@"
+	fi;
+	ssh -p 29418 hashar@gerrit.wikimedia.org gerrit $ARGS
+}
