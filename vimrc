@@ -10,6 +10,10 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+highlight NoBreakSpace ctermbg=cyan guibg=cyan
+autocmd ColorScheme * highlight NoBreakSpace ctermbg=cyan guibg=cyan
+match NoBreakSpace / / " on Mac: alt+space
+
 autocmd ColorScheme * highlight String ctermfg=Magenta
 colors pablo
 
