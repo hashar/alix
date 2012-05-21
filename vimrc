@@ -8,14 +8,15 @@ set background=dark
 " highlight trailing whitespaces with a red background
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+autocmd Syntax * syn match ExtraWhitespace /\s\+$/
 
 highlight NoBreakSpace ctermbg=cyan guibg=cyan
 autocmd ColorScheme * highlight NoBreakSpace ctermbg=cyan guibg=cyan
-match NoBreakSpace / / " on Mac: alt+space
+autocmd Syntax * syn match NoBreakSpace / / " on Mac: alt+space
 
 autocmd ColorScheme * highlight String ctermfg=Magenta
 colors pablo
+
 
 " puppet tweaks
 autocmd BufRead,BufNewFile *.pp set filetype=puppet
