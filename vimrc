@@ -8,11 +8,13 @@ set background=dark
 " highlight trailing whitespaces with a red background
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd Syntax * syn match ExtraWhitespace /\s\+$/
+call matchadd('ExtraWhitespace', '\s\+$')
 
+" highlight non breaking spaces (on Mac: alt+space)
 highlight NoBreakSpace ctermbg=cyan guibg=cyan
 autocmd ColorScheme * highlight NoBreakSpace ctermbg=cyan guibg=cyan
-autocmd Syntax * syn match NoBreakSpace / / " on Mac: alt+space
+call matchadd('NoBreakSpace', ' ')
+
 
 autocmd ColorScheme * highlight String ctermfg=Magenta
 colors pablo
