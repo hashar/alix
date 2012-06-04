@@ -16,6 +16,15 @@ autocmd ColorScheme * highlight NoBreakSpace ctermbg=cyan guibg=cyan
 call matchadd('NoBreakSpace', ' ')
 
 
+" Ultimately make php boolean keywords true/false to be green/red
+autocmd Syntax * syn keyword phpBooleanTrue true contained
+autocmd Syntax * syn keyword phpBooleanFalse false contained
+autocmd Syntax * syn cluster phpClConst remove=phpBoolean
+autocmd Syntax * syn cluster phpClConst add=phpBooleanTrue,phpBooleanFalse
+autocmd Syntax * highlight phpBooleanTrue ctermfg=darkGreen guibg=darkGreen
+autocmd Syntax * highlight phpBooleanFalse ctermfg=darkRed guibg=darkRed
+
+" Override color for "String" types
 autocmd ColorScheme * highlight String ctermfg=Magenta
 colors pablo
 
