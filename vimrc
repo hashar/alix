@@ -36,6 +36,8 @@ autocmd FileType puppet set foldmethod=indent
 autocmd FileType puppet set sw=2
 autocmd FileType puppet set ts=2
 
+" apache conf tweaks
+autocmd Syntax apache set foldmethod=indent
 
 set tabstop=4
 set shiftwidth=4
