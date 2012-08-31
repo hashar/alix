@@ -18,6 +18,16 @@ function parse_svn_branch {
 	svn info 2> /dev/null | perl -ne 'print $1 if /^URL:.*(?|(trunk)|(?:branches)\/([^\/]+))/'
 }
 
+# Show unstaged (*) and staged (+) changes
+export GIT_PS1_SHOWDIRTYSTATE=true
+
+# Show stashed ($)
+#export GIT_PS1_SHOWSTASHSTATE=true
+
+# Show untracked (%)
+#export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM="verbose git"
+
 # Wrapper to look for both git & subversion branches
 # git takes precedence.
 function parse_repo_branch {
