@@ -9,11 +9,6 @@ ALIX_PLATFORM=`uname`
 
 ################### GIT BRANCH IN PROMPT ##############################
 
-# function to get the current git branch
-# copied from somewhere on the internet.
-function parse_git_branch {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
 # Function guessing if we are in trunk or in a branches
 # A branch must be a direct subdirectory of a 'branches' directory
 function parse_svn_branch {
@@ -26,10 +21,10 @@ function parse_svn_branch {
 # Wrapper to look for both git & subversion branches
 # git takes precedence.
 function parse_repo_branch {
-	local GIT_BRANCH=$(parse_git_branch)
+	local GIT_BRANCH=$(__git_ps1)
 	if [ -n "$GIT_BRANCH" ]; then
 		# Great we have found a git branch
-		echo -n "(git:$GIT_BRANCH)"
+		echo -n ${GIT_BRANCH// /}
 	else
 		local SVN_BRANCH=$(parse_svn_branch)
 		if [ -n "$SVN_BRANCH" ]; then
