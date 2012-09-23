@@ -75,6 +75,8 @@ au Syntax php
 " overrides syntax/doxygen.vim defaults:
 hi def link doxygenComment Comment
 
+" Python scripts usually have 4 spaces for indentation
+au FileType python setlocal tabstop=4 expandtab sw=4 softtabstop=4
 
 " ###### FOLDING ############################################################
 set foldmethod=syntax
