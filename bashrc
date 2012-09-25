@@ -7,6 +7,14 @@ ALIX_PLATFORM=`uname`
 . $ALIX_DIR/shell_aliases
 . $ALIX_DIR/shell_functions
 
+# Enable bash completion as provided by Mac HomeBrew
+# Install using: brew install bash-completion.
+if [ -n "`which brew`" ]; then
+	if [ -f `brew --prefix`/etc/bash_completion ]; then
+		. `brew --prefix`/etc/bash_completion
+	fi
+fi
+
 ################### GIT BRANCH IN PROMPT ##############################
 
 # Function guessing if we are in trunk or in a branches
@@ -27,6 +35,13 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 # Show untracked (%)
 #export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM="verbose git"
+
+# __git_ps1 might not be defined in older git versions
+if [ "function" != `type -t __git_ps1` ]; then
+	function __git_ps1 {
+		git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
+	}
+fi
 
 # Wrapper to look for both git & subversion branches
 # git takes precedence.
@@ -82,14 +97,6 @@ esac
 
 # correct my spelling while doing cd
 shopt -s cdspell
-
-# Enable bash completion as provided by Mac HomeBrew
-# Install using: brew install bash-completion.
-if [ -n "`which brew`" ]; then
-	if [ -f `brew --prefix`/etc/bash_completion ]; then
-		. `brew --prefix`/etc/bash_completion
-	fi
-fi
 
 # Source local user changes if any
 if [ -f $ALIX_DIR/bashrc_local ]; then
