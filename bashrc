@@ -37,7 +37,7 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUPSTREAM="verbose git"
 
 # __git_ps1 might not be defined in older git versions
-if [ "function" != `type -t __git_ps1` ]; then
+if [ "function" != "`type -t __git_ps1`" ]; then
 	function __git_ps1 {
 		git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
 	}
