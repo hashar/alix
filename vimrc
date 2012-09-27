@@ -76,7 +76,7 @@ au Syntax php
 hi def link doxygenComment Comment
 
 " Python scripts usually have 4 spaces for indentation
-au FileType python setlocal tabstop=4 expandtab sw=4 softtabstop=4
+au FileType python setlocal tabstop=4 expandtab sw=4 softtabstop=4 foldmethod=indent
 
 " ###### FOLDING ############################################################
 set foldmethod=syntax
