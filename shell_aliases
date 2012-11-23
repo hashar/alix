@@ -7,6 +7,7 @@ case "$ALIX_PLATFORM" in
 	Darwin)
 		# -G enable colors on Mac OS X
 		alias ls='ls -G -F'
+		alias quicklook='qlmanage -p'
 	;;
 	*)
 		# On other platform, assumes GNU ls is installed
