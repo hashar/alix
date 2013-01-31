@@ -1,3 +1,6 @@
 [submodule "vim/syntastic"]
 	path = vim/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/puppet"]
+	path = vim/puppet
+	url = git://github.com/rodjek/vim-puppet.git
