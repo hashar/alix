@@ -16,7 +16,8 @@ let g:syntastic_error_symbol='✘'
 let g:syntastic_style_warning_symbol='!'
 let g:syntastic_style_error_symbol='!!'
 " Open error window automatically
-let g:syntastic_auto_loc_list=1
+" Just use ':Errors' to show it up
+"let g:syntastic_auto_loc_list=1
 " Skip warnings? (default 0)
 "let g:syntastic_quiet_warnings=1
 
