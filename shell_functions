@@ -22,3 +22,22 @@ function gerrit() {
 function beer() {
 	echo '🍺 ';
 }
+
+function jenkins() {
+	cmd=$1
+	shift
+
+	case "$cmd" in
+	"validate")
+		# Create a dummy change for jenkins validation
+		touch JENKINS \
+			&& git add JENKINS \
+			&& git commit -m 'Jenkins job validation (DO NOT SUBMIT)' \
+			&& git show \
+			&& echo "Now send the change!"
+		;;
+	'help' | *)
+		echo "Oh no"
+		;;
+	esac
+}
