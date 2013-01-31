@@ -10,7 +10,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " Syntax check when buffer are first loaded and on saving
-let g:syntastic_check_on_open=1
+"let g:syntastic_check_on_open=1
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_error_symbol='✘'
 let g:syntastic_style_warning_symbol='!'
