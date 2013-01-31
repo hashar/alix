@@ -1,6 +1,6 @@
 # Find out in which directory ALIX is installed
-ALIX_DIR=$(dirname $BASH_SOURCE)
-ALIX_PLATFORM=`uname`
+export ALIX_DIR=$(dirname $BASH_SOURCE)
+export ALIX_PLATFORM=`uname`
 
 
 . $ALIX_DIR/shell_env
