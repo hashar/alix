@@ -2,6 +2,9 @@
 " http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation
 "
 
+set runtimepath^=$ALIX_DIR/vim
+call pathogen#infect("$ALIX_DIR/vim")
+
 syntax on
 set background=dark
 
