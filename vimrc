@@ -5,6 +5,25 @@
 set runtimepath^=$ALIX_DIR/vim
 call pathogen#infect("$ALIX_DIR/vim")
 
+" syntastic configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+" Syntax check when buffer are first loaded and on saving
+let g:syntastic_check_on_open=1
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_error_symbol='✘'
+let g:syntastic_style_warning_symbol='!'
+let g:syntastic_style_error_symbol='!!'
+" Open error window automatically
+let g:syntastic_auto_loc_list=1
+" Skip warnings? (default 0)
+"let g:syntastic_quiet_warnings=1
+
+" Better status line, from the doc page
+let g:syntastic_stl_format = '[%E{%e err, line %fe}%B{, }%W{%w warn, line %fw}]'
+
+
 syntax on
 set background=dark
 
