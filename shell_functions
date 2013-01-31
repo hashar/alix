@@ -12,5 +12,7 @@ function gerrit() {
 	else
 		ARGS="$@"
 	fi;
-	ssh -p 29418 hashar@gerrit.wikimedia.org gerrit "$ARGS"
+	set -x
+	ssh -p 29418 hashar@gerrit.wikimedia.org "gerrit $ARGS"
+	set +x
 }
