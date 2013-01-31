@@ -34,4 +34,8 @@ Edit your `~/.bashrc` and at the very beginning add:
 
  . ~/alix/bashrc
 
+Edit your `~/.vimrc` and make it:
+
+ source $ALIX_DIR/vimrc
+
 Et voilà!
