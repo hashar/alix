@@ -16,3 +16,9 @@ function gerrit() {
 	ssh -p 29418 hashar@gerrit.wikimedia.org "gerrit $ARGS"
 	set +x
 }
+
+# Show up a pint of beer on Mac OS X :-D
+# BEER MUG (U+1F37A) -- thanks Saper for the reference
+function beer() {
+	echo '🍺 ';
+}
