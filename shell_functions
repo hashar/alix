@@ -6,6 +6,11 @@ function update-ssh-known-hosts () {
 	scp fenari.wikimedia.org:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
 }
 
+# Run git with tracing
+function gittrace() {
+	GIT_TRACE=1 git "$@"
+}
+
 function gerrit() {
 	if [ -z "$1" ]; then
 		ARGS="--help"
