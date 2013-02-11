@@ -54,7 +54,7 @@ autocmd Syntax * highlight phpBooleanFalse ctermfg=darkRed guibg=darkRed
 
 " Override color for "String" types
 autocmd ColorScheme * highlight String ctermfg=Magenta
-colors pablo
+colors hashar
 
 " apache conf tweaks
 autocmd Syntax apache set foldmethod=indent
