@@ -28,6 +28,11 @@ function beer() {
 	echo '🍺 ';
 }
 
+# Similar as beer() but gives out three cookies
+function cookies() {
+	echo '🍪 🍪 🍪';
+}
+
 function jenkins() {
 	cmd=$1
 	shift
