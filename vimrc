@@ -59,6 +59,12 @@ colors hashar
 " apache conf tweaks
 autocmd Syntax apache set foldmethod=indent
 
+" puppet tweak
+autocmd Syntax puppet set foldmethod=indent
+
+" YAML tweak
+autocmd Syntax yaml set foldmethod=indent
+
 set tabstop=4
 set shiftwidth=4
 
