@@ -51,3 +51,10 @@ function jenkins() {
 		;;
 	esac
 }
+
+function puppetself() {
+	# FIXME bails out when not in labs
+	export GIT_SSH=/var/lib/git/ssh
+	echo "Changed GIT_SSH to $GIT_SSH"
+	cd /var/lib/git
+}
