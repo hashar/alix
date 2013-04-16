@@ -4,3 +4,6 @@
 [submodule "vim/puppet"]
 	path = vim/puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule "vim/tabular"]
+	path = vim/tabular
+	url = git://github.com/godlygeek/tabular.git
