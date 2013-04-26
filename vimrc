@@ -24,7 +24,7 @@ let g:syntastic_style_error_symbol='!!'
 let g:syntastic_phpmd_disable="1"
 
 " Load phpcs MediaWiki standard
-autocmd BufRead /srv/trunk/* let g:syntastic_phpcs_conf = "--standard=$HOME/projects/mediawiki/tools/codesniffer/MediaWiki"
+autocmd BufRead */projects/mediawiki/* let g:syntastic_php_phpcs_args = "--standard=$HOME/projects/mediawiki/tools/codesniffer/MediaWiki"
 
 " Better status line, from the doc page
 let g:syntastic_stl_format = '[%E{%e err, line %fe}%B{, }%W{%w warn, line %fw}]'
