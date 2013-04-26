@@ -29,6 +29,8 @@ autocmd BufRead */projects/mediawiki/* let g:syntastic_php_phpcs_args = "--stand
 " Better status line, from the doc page
 let g:syntastic_stl_format = '[%E{%e err, line %fe}%B{, }%W{%w warn, line %fw}]'
 
+" git commit in a submodule did not have the correct filetype
+autocmd BufNewFile,BufRead *.git/modules/*/COMMIT_EDITMSG setf gitcommit
 
 syntax on
 set background=dark
