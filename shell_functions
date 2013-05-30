@@ -52,6 +52,18 @@ function jenkins() {
 	esac
 }
 
+function php-profile() {
+	php -d xdebug.profiler_enable=1 $@
+}
+
+function php-trace() {
+	php -d xdebug.auto_trace=1 $@
+}
+
+function php-trace-raw() {
+	php -d xdebug.auto_trace=1 -d xdebug.trace_format=1 $@
+}
+
 function puppetself() {
 	# FIXME bails out when not in labs
 	export GIT_SSH=/var/lib/git/ssh
