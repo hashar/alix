@@ -70,3 +70,7 @@ function puppetself() {
 	echo "Changed GIT_SSH to $GIT_SSH"
 	cd /var/lib/git
 }
+
+function ppv() {
+	puppet parser validate $@
+}
