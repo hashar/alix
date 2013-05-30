@@ -7,3 +7,6 @@
 [submodule "vim/tabular"]
 	path = vim/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/powerline"]
+	path = vim/powerline
+	url = git://github.com/Lokaltog/powerline.git
