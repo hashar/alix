@@ -44,7 +44,7 @@ function jenkins() {
 			&& git add JENKINS jenkins.php jenkins.js \
 			&& git commit -m 'Jenkins job validation (DO NOT SUBMIT)' \
 			&& git show \
-			&& echo "Now send the change!"
+			&& echo "Now send the change!   git-review -D"
 		;;
 	'help' | *)
 		echo "Oh no"
