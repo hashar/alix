@@ -32,3 +32,9 @@ highlight Directory  ctermfg=2
 highlight StatusLine ctermfg=11 ctermbg=12 cterm=none
 highlight Normal     ctermbg=0
 highlight Search				ctermbg=3
+
+" http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+highlight DiffAdd     cterm=none               ctermbg=22
+highlight DiffDelete  cterm=none  ctermfg=Red  ctermbg=52
+highlight DiffChange  cterm=none               ctermbg=235
+highlight DiffText    cterm=none               ctermbg=53
