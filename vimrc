@@ -82,6 +82,9 @@ autocmd Syntax apache set foldmethod=indent
 " puppet tweak
 autocmd Syntax puppet set foldmethod=indent
 
+" Wikimedia style uses 4 spaces for indentation
+autocmd BufRead */projects/operations/puppet/modules* set sw=4 ts=4 et
+
 " YAML tweak
 autocmd Syntax yaml set foldmethod=indent
 
