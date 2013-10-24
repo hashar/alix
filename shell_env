@@ -2,6 +2,11 @@
 
 PATH=~/bin:/usr/local/sbin:/usr/local/bin:/opt/local/bin:$PATH
 
+# We looove Debian
+# http://qa.debian.org/developer.php?login=hashar@free.fr
+export DEBEMAIL="hashar@free.fr"
+export DEBFULLNAME="Antoine Musso"
+
 #################### COLORED MAN ######################################
 # less env variables to make less a bit nicer to read
 # https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages
