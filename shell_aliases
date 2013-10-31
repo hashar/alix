@@ -31,3 +31,6 @@ alias mw_check_doc_group='colordiff -u --label INGROUP <(ack @ingroup |cat | cut
 # Easily revert useless svn mergeinfo
 # By Chase Seibert on http://stackoverflow.com/questions/767418/remove-unnecessary-svnmergeinfo-properties
 alias svn_mergeinfo_clean='svn revert `svn status |grep "^ M      " |sed s/" M      "// |tr "\n", " "`'
+
+# For packaging:
+gbp-precise='DIST=precise git-buildpackage --git-builder=git-pbuilder'
