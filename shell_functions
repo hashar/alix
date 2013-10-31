@@ -74,3 +74,7 @@ function puppetself() {
 function ppv() {
 	puppet parser validate $@
 }
+
+function gbp-precise() {
+	DIST=precise git-buildpackage --git-builder=git-pbuilder
+}
