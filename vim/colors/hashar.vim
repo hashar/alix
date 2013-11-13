@@ -38,3 +38,6 @@ highlight DiffAdd     cterm=none               ctermbg=22
 highlight DiffDelete  cterm=none  ctermfg=Red  ctermbg=52
 highlight DiffChange  cterm=none               ctermbg=235
 highlight DiffText    cterm=none               ctermbg=53
+
+" Omni popup menu
+highlight Pmenu ctermbg=244
