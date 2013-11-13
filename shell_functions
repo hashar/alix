@@ -64,6 +64,10 @@ function php-trace-raw() {
 	php -d xdebug.auto_trace=1 -d xdebug.trace_format=1 $@
 }
 
+function php-vld() {
+	php -d vld.active=1 -d vld.execute=0 -f $1
+}
+
 function puppetself() {
 	# FIXME bails out when not in labs
 	export GIT_SSH=/var/lib/git/ssh
