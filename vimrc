@@ -22,6 +22,8 @@ if ! has('gui_running')
 	augroup END
 endif
 
+let mapleader=","
+
 " syntastic configuration
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
