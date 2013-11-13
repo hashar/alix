@@ -2,8 +2,8 @@
 # Basic functions
 
 function update-ssh-known-hosts () {
-	echo "Updating ssh known hosts from fenari"
-	scp fenari.wikimedia.org:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
+	echo "Updating ssh known hosts from tin.eqiad.wmnet"
+	scp tin.eqiad.wmnet:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
 }
 
 # Run git with tracing
