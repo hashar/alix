@@ -87,7 +87,7 @@ function user_at_host_color {
 # parse_git_branch function above.
 
 case "$TERM" in
-	xterm-color | xterm-256color)
+	xterm | xterm-color | xterm-256color)
 		PS1='\[\e]0;\u@'$(get_PS1_hostname)': \w\a\]\[\033['$(user_at_host_color)'\]\u@'$(get_PS1_hostname)'\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_repo_branch)\[\033[00m\]\$ '
 		;;
 	*)
