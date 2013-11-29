@@ -2,6 +2,9 @@
 " http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation
 "
 
+" fix up backspace key with vim coming from homebrew
+set backspace=2
+
 set runtimepath^=$ALIX_DIR/vim
 set rtp+=$ALIX_DIR/vim/powerline/powerline/bindings/vim
 call pathogen#infect("$ALIX_DIR/vim")
@@ -42,15 +45,20 @@ let g:syntastic_style_error_symbol='!!'
 
 let g:syntastic_phpmd_disable="1"
 
+" Stop linting puppet, Wikimedia manifests are a mess
+"let g:syntastic_puppet_lint_disable="1"
+
 " Load phpcs MediaWiki standard
 autocmd BufRead */projects/mediawiki/* let g:syntastic_php_phpcs_args = "--report=csv --standard=$HOME/projects/mediawiki/tools/codesniffer/MediaWiki"
+autocmd BufRead */projects/integration/jenkins/mediawiki.d/* let g:syntastic_php_phpcs_args = "--report=csv --standard=$HOME/projects/mediawiki/tools/codesniffer/MediaWiki"
 autocmd BufRead */projects/operations/mediawiki-config/* let g:syntastic_php_phpcs_args = "--report=csv --standard=$HOME/projects/mediawiki/tools/codesniffer/MediaWiki"
 
 " Better status line, from the doc page
 let g:syntastic_stl_format = '[%E{%e err, line %fe}%B{, }%W{%w warn, line %fw}]'
 
 " git commit in a submodule did not have the correct filetype
-autocmd BufNewFile,BufRead *.git/modules/*/COMMIT_EDITMSG setf gitcommit
+autocmd BufNewFile,BufRead *.git/modules/**/COMMIT_EDITMSG setf gitcommit
+autocmd BufNewFile,BufRead *.git/modules/**/config setf gitconfig
 
 syntax on
 set background=dark
@@ -85,7 +93,7 @@ autocmd Syntax apache set foldmethod=indent
 autocmd Syntax puppet set foldmethod=indent
 
 " Wikimedia style uses 4 spaces for indentation
-autocmd BufRead */projects/operations/puppet/modules* set sw=4 ts=4 et
+autocmd BufRead */projects/operations/puppet/* set sw=4 ts=4 et
 
 " YAML tweak
 autocmd Syntax yaml set foldmethod=indent
@@ -141,6 +149,16 @@ let g:xml_syntax_folding = 1
 let perl_fold = 1
 let perl_fold_blocks = 1
 
+" from https://github.com/majutsushi/tagbar/wiki
+let g:tagbar_type_puppet = {
+    \ 'ctagstype': 'puppet',
+    \ 'kinds': [
+        \'c:class',
+        \'s:site',
+        \'n:node',
+        \'d:definition'
+      \]
+    \}
 
 " Tip 804: Single tags file for a source tree
 " http://vim.wikia.com/wiki/Single_tags_file_for_a_source_tree
