@@ -19,3 +19,6 @@
 [submodule "vim/jedi-vim"]
 	path = vim/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim/gitgutter"]
+	path = vim/gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
