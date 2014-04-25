@@ -33,6 +33,11 @@ function cookies() {
 	echo '🍪 🍪 🍪';
 }
 
+# American's loves them..
+function donuts() {
+	echo '🍩';
+}
+
 function jenkins() {
 	cmd=$1
 	shift
