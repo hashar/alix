@@ -78,7 +78,7 @@ function php-trace-raw() {
 }
 
 function php-vld() {
-	php -d vld.active=1 -d vld.execute=0 -f $1
+	php -d "extension=vld.so" -d vld.active=1 -d vld.execute=0 -f $1
 }
 
 function puppetself() {
