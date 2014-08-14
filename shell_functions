@@ -61,6 +61,10 @@ function jenkins() {
 	esac
 }
 
+function php-extension_dir() {
+	php -r 'print ini_get("extension_dir");'
+}
+
 function php-profile() {
 	php -d xdebug.profiler_enable=1 $@
 }
