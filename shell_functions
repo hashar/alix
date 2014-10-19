@@ -26,6 +26,10 @@ function 720x480() {
 	osascript -e "tell application \"Terminal\" to set the bounds of the first window to {100, 50, 820, 530}"
 }
 
+function airport() {
+	 /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport "$@"
+}
+
 # Show up a pint of beer on Mac OS X :-D
 # BEER MUG (U+1F37A) -- thanks Saper for the reference
 function beer() {
