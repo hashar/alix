@@ -44,6 +44,7 @@ let g:syntastic_style_error_symbol='!!'
 "let g:syntastic_quiet_warnings=1
 
 let g:syntastic_phpmd_disable="1"
+let g:syntastic_ruby_checkers=['mri', 'rubocop']
 
 " Stop linting puppet, Wikimedia manifests are a mess
 "let g:syntastic_puppet_lint_disable="1"
