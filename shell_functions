@@ -46,6 +46,10 @@ function donuts() {
 	echo '🍩';
 }
 
+function bug() {
+	echo '🐛  <-- bug!';
+}
+
 function jenkins() {
 	cmd=$1
 	shift
