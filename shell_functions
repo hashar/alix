@@ -36,6 +36,10 @@ function beer() {
 	echo '🍺 ';
 }
 
+function cigarette() {
+	echo '🚬';
+}
+
 # Similar as beer() but gives out three cookies
 function cookies() {
 	echo '🍪 🍪 🍪';
