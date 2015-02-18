@@ -1,6 +1,6 @@
 # vim: set filetype=sh:
 
-PATH=~/bin:/usr/local/sbin:/usr/local/bin:/opt/local/bin:$PATH
+PATH=~/bin:/usr/local/sbin:/usr/local/bin:~/.composer/vendor/bin:$PATH
 
 # We looove Debian
 # http://qa.debian.org/developer.php?login=hashar@free.fr
