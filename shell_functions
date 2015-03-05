@@ -6,6 +6,10 @@ function update-ssh-known-hosts () {
 	scp tin.eqiad.wmnet:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
 }
 
+function sshaddall() {
+	ssh-add "$HOME"/.ssh/*id_rsa
+}
+
 # Run git with tracing
 function gittrace() {
 	GIT_TRACE=1 git "$@"
