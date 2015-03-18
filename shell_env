@@ -4,6 +4,7 @@ PATH=~/.local/bin:~/bin:/usr/local/sbin:/usr/local/bin:~/.composer/vendor/bin:$P
 
 # We looove Debian
 # http://qa.debian.org/developer.php?login=hashar@free.fr
+export COWBUILDER_BASE='/packaging'
 export DEBEMAIL="Antoine Musso <hashar@free.fr>"
 
 #################### COLORED MAN ######################################
