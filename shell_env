@@ -1,6 +1,8 @@
 # vim: set filetype=sh:
 
-PATH="$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.gem/ruby/2.1.0/bin:$PATH"
+export GEM_HOME=$HOME/.gem
+
+PATH="$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$HOME/.composer/vendor/bin:$GEM_HOME/ruby/2.1.0/bin:$PATH"
 
 # We looove Debian
 # http://qa.debian.org/developer.php?login=hashar@free.fr
