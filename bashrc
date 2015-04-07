@@ -79,7 +79,7 @@ function user_at_host_color {
 
 	case $domain in
 
-		*.eqiad.wmflabs)
+		*eqiad.wmflabs)
 			echo "01;36m"  # cyan
 		;;
 		*)
