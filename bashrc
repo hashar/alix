@@ -79,10 +79,7 @@ function user_at_host_color {
 
 	case $domain in
 
-		pmtpa.wmflabs)
-			echo "01;33m"  # yellow
-		;;
-		eqiad.wmflabs)
+		*.eqiad.wmflabs)
 			echo "01;36m"  # cyan
 		;;
 		*)
