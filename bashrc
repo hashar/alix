@@ -65,15 +65,6 @@ function parse_repo_branch {
 	fi
 }
 
-# Specific to WMF cluster which use non human friendly hostname :-D
-function get_PS1_hostname {
-	if [ -n "$INSTANCENAME" ]; then
-		echo $INSTANCENAME;
-	else
-		echo "\h";
-	fi
-}
-
 function user_at_host_color {
 	local domain=`hostname -f | cut -d\. -f2-`
 
@@ -94,7 +85,7 @@ function user_at_host_color {
 
 case "$TERM" in
 	xterm | xterm-color | xterm-256color)
-		PS1='\[\e]0;\u@'$(get_PS1_hostname)': \w\a\]\[\033['$(user_at_host_color)'\]\u@'$(get_PS1_hostname)'\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_repo_branch)\[\033[00m\]\$ '
+		PS1='\[\e]0;\u@\h: \w\a\]\[\033['$(user_at_host_color)'\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[00;32m\]$(parse_repo_branch)\[\033[00m\]\$ '
 		;;
 	*)
 		PS1='\u@\h:\w$(parse_repo_branch)\$ '
