@@ -70,6 +70,12 @@ function user_at_host_color {
 
 	case $domain in
 
+		*.integration.eqiad.wmflabs)
+			echo "01;33m" # yellow
+		;;
+		*.deployment-prep.eqiad.wmflabs)
+			echo "01;34m" # blue
+		;;
 		*eqiad.wmflabs)
 			echo "01;36m"  # cyan
 		;;
