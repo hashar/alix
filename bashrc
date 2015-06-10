@@ -66,9 +66,9 @@ function parse_repo_branch {
 }
 
 function user_at_host_color {
-	local domain=`hostname -f | cut -d\. -f2-`
+	local fqdn=`hostname -f`
 
-	case $domain in
+	case $fqdn in
 
 		*.integration.eqiad.wmflabs)
 			echo "01;33m" # yellow
