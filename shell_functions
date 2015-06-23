@@ -59,8 +59,8 @@ function bug() {
 }
 
 function jenkins() {
-	cmd=$1
-	changeid=${2:-"I0cbfadb4363df19f3a3ff6819280e5ccbedc50b9"}
+	local cmd=$1
+	local changeid=${2:-"I0cbfadb4363df19f3a3ff6819280e5ccbedc50b9"}
 	shift
 
 	echo "Using Change-Id: $changeid"
