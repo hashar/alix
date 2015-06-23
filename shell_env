@@ -2,7 +2,7 @@
 
 export GEM_HOME=$HOME/.gem
 
-PATH="$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$HOME/.composer/vendor/bin:$GEM_HOME/ruby/2.1.0/bin:$PATH"
+PATH="$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$HOME/.composer/vendor/bin:$PATH"
 
 if [ "$ALIX_PLATFORM" = "Darwin" ]; then
 	PATH="$HOME/.gem/bin:$PATH"
