@@ -99,17 +99,6 @@ function php-vld() {
 	php -d "extension=vld.so" -d vld.active=1 -d vld.execute=0 -f $1
 }
 
-function puppetself() {
-	# FIXME bails out when not in labs
-	export GIT_SSH=/var/lib/git/ssh
-	echo "Changed GIT_SSH to $GIT_SSH"
-	cd /var/lib/git
-}
-
 function ppv() {
 	puppet parser validate $@
-}
-
-function gbp-precise() {
-	DIST=precise git-buildpackage --git-builder=git-pbuilder
 }
