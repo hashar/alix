@@ -34,9 +34,11 @@ export VISUAL="vim"
 # Ever tried googling an error message in French? :-D
 export LC_MESSAGES="C"
 
-# Lighter directory in Mac OS X ls output
-#export LSCOLORS="gx"
-export LSCOLORS="eh"
+if [ "$ALIX_PLATFORM" = "Darwin" ]; then
+	# Lighter directory in Mac OS X ls output
+	#export LSCOLORS="gx"
+	export LSCOLORS="eh"
+fi
 
 # fancy MySQL prompt
 export MYSQL_PS1="(\u@\h) [\d]> "
