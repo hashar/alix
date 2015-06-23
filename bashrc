@@ -9,7 +9,7 @@ export ALIX_PLATFORM=`uname`
 
 # Enable bash completion as provided by Mac HomeBrew
 # Install using: brew install bash-completion.
-if [ -n "`which brew`" ]; then
+if [[ "$ALIX_PLATFORM" = "Darwin" && -n "`which brew`" ]]; then
 	if [ -f `brew --prefix`/etc/bash_completion ]; then
 		. `brew --prefix`/etc/bash_completion
 	fi
