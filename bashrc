@@ -23,15 +23,6 @@ fi
 
 ################### GIT BRANCH IN PROMPT ##############################
 
-# Function guessing if we are in trunk or in a branches
-# A branch must be a direct subdirectory of a 'branches' directory
-function parse_svn_branch {
-	# Perl oneliner:
-	# (?|) to offer alternatives and keep group numbering
-	# (?:) do not capture this group. Let us exclude 'branches'
-	svn info 2> /dev/null | perl -ne 'print $1 if /^URL:.*(?|(trunk)|(?:branches)\/([^\/]+))/'
-}
-
 # Show unstaged (*) and staged (+) changes
 export GIT_PS1_SHOWDIRTYSTATE=true
 
@@ -49,19 +40,12 @@ if [ "function" != "`type -t __git_ps1`" ]; then
 	}
 fi
 
-# Wrapper to look for both git & subversion branches
-# git takes precedence.
+# Wrapper to look for git branches
 function parse_repo_branch {
 	local GIT_BRANCH=$(__git_ps1)
 	if [ -n "$GIT_BRANCH" ]; then
 		# Great we have found a git branch
 		echo -n ${GIT_BRANCH// /}
-	else
-		local SVN_BRANCH=$(parse_svn_branch)
-		if [ -n "$SVN_BRANCH" ]; then
-			# Add a 'svn:' prefix so we reminder to use svn and not git
-			echo -n "(svn:$SVN_BRANCH)"
-		fi
 	fi
 }
 

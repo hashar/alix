@@ -22,12 +22,4 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# shortcuts
-alias svn_pending_log='svn log -rBASE:HEAD'
-alias svn_pending_diff='svn diff -rBASE:HEAD'
-
 alias mw_check_doc_group='colordiff -u --label INGROUP <(ack @ingroup |cat | cut  -d\  -f4| sort | uniq) --label DEFGROUP <(ack @defgroup |cat | cut  -d\  -f4| sort | uniq)'
-
-# Easily revert useless svn mergeinfo
-# By Chase Seibert on http://stackoverflow.com/questions/767418/remove-unnecessary-svnmergeinfo-properties
-alias svn_mergeinfo_clean='svn revert `svn status |grep "^ M      " |sed s/" M      "// |tr "\n", " "`'
