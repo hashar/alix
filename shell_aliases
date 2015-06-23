@@ -21,5 +21,3 @@ alias tree='tree -ACF'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-
-alias mw_check_doc_group='colordiff -u --label INGROUP <(ack @ingroup |cat | cut  -d\  -f4| sort | uniq) --label DEFGROUP <(ack @defgroup |cat | cut  -d\  -f4| sort | uniq)'
