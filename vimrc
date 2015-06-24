@@ -151,6 +151,12 @@ let g:xml_syntax_folding = 1
 let perl_fold = 1
 let perl_fold_blocks = 1
 
+" shell folding
+"   1 functions
+"   2 heredoc
+"   4 ifdofor
+let sh_fold_enabled = 7
+
 " from https://github.com/majutsushi/tagbar/wiki
 let g:tagbar_type_puppet = {
     \ 'ctagstype': 'puppet',
