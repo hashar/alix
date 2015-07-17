@@ -157,6 +157,15 @@ let perl_fold_blocks = 1
 "   4 ifdofor
 let sh_fold_enabled = 7
 
+" ruby
+" https://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt
+" https://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-syntax.txt
+let ruby_fold = 1
+let ruby_operators = 1
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_use_bundler = 1
+
 " from https://github.com/majutsushi/tagbar/wiki
 let g:tagbar_type_puppet = {
     \ 'ctagstype': 'puppet',
