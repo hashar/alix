@@ -16,13 +16,19 @@ function gittrace() {
 }
 
 function gerrit() {
+	host='gerrit.wikimedia.org'
+	if [ "$1" == "openstack" ]; then
+		host='review.openstack.org'
+		shift
+	fi;
+
 	if [ -z "$1" ]; then
 		ARGS="--help"
 	else
 		ARGS="$@"
 	fi;
 	set -x
-	ssh -p 29418 hashar@gerrit.wikimedia.org "gerrit $ARGS"
+	ssh -p 29418 hashar@$host "gerrit $ARGS"
 	set +x
 }
 
