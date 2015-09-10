@@ -97,6 +97,15 @@ autocmd Syntax puppet set foldmethod=indent
 autocmd BufRead $HOME/projects/operations/puppet/* set sw=4 ts=4 sts=4 et
 autocmd BufRead $HOME/puppet/* set sw=4 ts=4 sts=4 et
 
+" erb magic
+autocmd BufRead *.conf.erb set ft=eruby.dosini
+autocmd BufRead *.cnf.erb set ft=eruby.dosini
+autocmd BufRead *.ini.erb set ft=eruby.dosini
+autocmd BufRead *.ini.erb set ft=eruby.dosini
+autocmd BufRead *.js.erb set ft=eruby.javascript
+autocmd BufRead *.py.erb set ft=eruby.python
+autocmd BufRead *.sh.erb set ft=eruby.sh
+
 " YAML tweak
 autocmd Syntax yaml set foldmethod=indent
 
