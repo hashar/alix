@@ -85,6 +85,14 @@ esac
 # correct my spelling while doing cd
 shopt -s cdspell
 
+# append to history instead of overwriting
+shopt -s histappend
+HISTCONTROL=ignoredups:ignorespace
+HISTFILESIZE=19119
+HISTSIZE=1911  # 0x777
+HISTIGNORE=ls:ll:cd
+HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S %z | '
+
 # Source local user changes if any
 if [ -f $ALIX_DIR/bashrc_local ]; then
 	. $ALIX_DIR/bashrc_local
