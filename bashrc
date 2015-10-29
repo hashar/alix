@@ -63,6 +63,9 @@ function user_at_host_color {
 		*eqiad.wmflabs)
 			echo "01;36m"  # cyan
 		;;
+		pico.hashar)
+			echo "01;34m"  # blue
+		;;
 		*)
 			echo "01;35m"  # magenta
 		;;
