@@ -96,6 +96,12 @@ HISTSIZE=1911  # 0x777
 HISTIGNORE=ls:ll:cd
 HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S %z | '
 
+if [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
+	# Since Konsole is lame
+	# Control+K to clear screen and scrollback
+	bind -x "\"\C-k\":\"echo -en '\033c\e[3J'\""
+fi
+
 # Source local user changes if any
 if [ -f $ALIX_DIR/bashrc_local ]; then
 	. $ALIX_DIR/bashrc_local
