@@ -32,6 +32,16 @@ function gerrit() {
 	set +x
 }
 
+function fatalmonitor() {
+	host='fluorine.eqiad.wmnet'
+	if [ "$HOSTNAME" = "$host" ]; then
+		# In case I ever get ALIX on fluorine (tip: it is not on WMF prod)
+		fatalmonitor "$@"
+	else
+		ssh -t -C fluorine.eqiad.wmnet fatalmonitor
+	fi
+}
+
 function 720x480() {
 	osascript -e "tell application \"Terminal\" to set the bounds of the first window to {100, 50, 820, 530}"
 }
