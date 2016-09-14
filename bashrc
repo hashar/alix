@@ -31,7 +31,15 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 
 # Show untracked (%)
 #export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+# verbose: number of commits
+# git: compare HEAD to @{upstream}
+# name: with verbose: upstream name
 export GIT_PS1_SHOWUPSTREAM="verbose git"
+# Separator between branch and state symbol
+export GIT_PS1_STATESEPARATOR="|"
+# Colored dirty state
+export GIT_PS1_SHOWCOLORHINTS=1
 
 # __git_ps1 might not be defined in older git versions
 if [ "function" != "`type -t __git_ps1`" ]; then
