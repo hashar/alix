@@ -74,6 +74,10 @@ function bug() {
 	echo '🐛  <-- bug!';
 }
 
+function profit() {
+	echo "💶 💶 💶 ";  # banknote with euro sign
+}
+
 function jenkins() {
 	local cmd=$1
 	local changeid=${2:-"I0cbfadb4363df19f3a3ff6819280e5ccbedc50b9"}
