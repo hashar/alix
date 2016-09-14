@@ -96,6 +96,8 @@ autocmd Syntax puppet set foldmethod=indent
 " Wikimedia style uses 4 spaces for indentation
 autocmd BufRead $HOME/projects/operations/puppet/* set sw=4 ts=4 sts=4 et
 autocmd BufRead $HOME/puppet/* set sw=4 ts=4 sts=4 et
+autocmd BufRead $HOME/projects/mediawiki/selenium/* set sw=2 ts=2 sts=2 et
+autocmd BufRead $HOME/projects/mediawiki/ruby/* set sw=2 ts=2 sts=2 et
 
 " erb magic
 autocmd BufRead *.conf.erb set ft=eruby.dosini
