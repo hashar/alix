@@ -88,6 +88,7 @@ function jenkins() {
 	"validate")
 		# Create a dummy change for jenkins validation
 		touch JENKINS jenkins.php jenkins.js jenkins.rb jenkins.pp jenkins.erb jenkins-testfile.py \
+			&& echo '<?php' > jenkins.php \
 			&& git add JENKINS jenkins.php jenkins.js jenkins.rb jenkins.pp jenkins.erb jenkins-testfile.py \
 			&& git commit -m 'Jenkins job validation (DO NOT SUBMIT)' -m "Change-Id: $changeid" \
 			&& git show \
