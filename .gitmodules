@@ -25,3 +25,6 @@
 [submodule "vim/mediawiki.vim"]
 	path = vim/mediawiki.vim
 	url = https://github.com/vim-scripts/mediawiki.vim
+[submodule "vim/csv"]
+	path = vim/csv
+	url = https://github.com/chrisbra/csv.vim
