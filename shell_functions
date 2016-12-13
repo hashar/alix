@@ -32,6 +32,28 @@ function gerrit() {
 	set +x
 }
 
+function telnets() {
+	openssl=`which openssl`
+	if [ -z "$openssl" ]; then
+		echo "ERROR: openssl CLI not found." >&2
+		return 1
+	fi
+	if [ -z "$1" ] || [ ! -z "$3" ]; then
+		echo "Usage:"
+		echo "    ${FUNCNAME[0]} host [port]"
+		echo "    ${FUNCNAME[0]} host:port"
+		return 1
+	fi
+	if [ -z "$2" ]; then
+		# telnets host.example.org
+		# telnets host.example.org:443
+		"$openssl" s_client -connect "$1"
+	else
+		# telnets host.example.org 443
+		"$openssl" s_client -connect "$1":"$2"
+	fi
+}
+
 function fatalmonitor() {
 	host='fluorine.eqiad.wmnet'
 	if [ "$HOSTNAME" = "$host" ]; then
