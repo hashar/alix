@@ -146,6 +146,8 @@ set showcmd
 
 " highlight doxygen syntax in comments
 let g:load_doxygen_syntax = 1
+" MediaWiki does not care about javadoc auto brief
+let g:doxygen_end_punctuation = '[.\n]'
 " snippet grabbed from synload.vim to add PHP :-)
 au Syntax php
     \ if (exists('b:load_doxygen_syntax') && b:load_doxygen_syntax)
