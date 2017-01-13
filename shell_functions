@@ -15,6 +15,13 @@ function gittrace() {
 	GIT_TRACE=1 git "$@"
 }
 
+function headpage {
+	head -n $((LINES - 2))
+}
+function tailpage {
+	tail -n $((LINES - 2))
+}
+
 function gerrit() {
 	host='gerrit.wikimedia.org'
 	if [ "$1" == "openstack" ]; then
