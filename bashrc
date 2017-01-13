@@ -1,17 +1,22 @@
+# shellcheck source=/dev/null
+
 # Find out in which directory ALIX is installed
-export ALIX_DIR=$(dirname $BASH_SOURCE)
-export ALIX_PLATFORM=`uname`
+export ALIX_DIR
+ALIX_DIR=$(dirname $BASH_SOURCE)
+export ALIX_PLATFORM
+ALIX_PLATFORM=$(uname)
 
-
-. $ALIX_DIR/shell_env
-. $ALIX_DIR/shell_aliases
-. $ALIX_DIR/shell_functions
+. "$ALIX_DIR"/shell_env
+. "$ALIX_DIR"/shell_aliases
+. "$ALIX_DIR"/shell_functions
 
 # Enable bash completion as provided by Mac HomeBrew
 # Install using: brew install bash-completion.
-if [[ "$ALIX_PLATFORM" = "Darwin" && -n "`which brew`" ]]; then
-	if [ -f `brew --prefix`/etc/bash_completion ]; then
-		. `brew --prefix`/etc/bash_completion
+if [[ "$ALIX_PLATFORM" = "Darwin" && -n "$(which brew)" ]]; then
+	local brew_prefix
+	brew_prefix=$(brew --prefix)
+	if [ -f "$brew_prefix"/etc/bash_completion ]; then
+		. "$brew_prefix"/etc/bash_completion
 	fi
 elif ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -42,7 +47,7 @@ export GIT_PS1_STATESEPARATOR="|"
 export GIT_PS1_SHOWCOLORHINTS=1
 
 # __git_ps1 might not be defined in older git versions
-if [ "function" != "`type -t __git_ps1`" ]; then
+if [ "function" != "$(type -t __git_ps1)" ]; then
 	function __git_ps1 {
 		git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
 	}
@@ -50,15 +55,17 @@ fi
 
 # Wrapper to look for git branches
 function parse_repo_branch {
-	local GIT_BRANCH=$(__git_ps1)
+	local GIT_BRANCH
+	GIT_BRANCH=$(__git_ps1)
 	if [ -n "$GIT_BRANCH" ]; then
 		# Great we have found a git branch
-		echo -n ${GIT_BRANCH// /}
+		echo -n "${GIT_BRANCH// /}"
 	fi
 }
 
 function user_at_host_color {
-	local fqdn=`hostname -f`
+	local fqdn
+	fqdn=$(hostname -f)
 
 	case $fqdn in
 
@@ -111,6 +118,6 @@ if [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
 fi
 
 # Source local user changes if any
-if [ -f $ALIX_DIR/bashrc_local ]; then
-	. $ALIX_DIR/bashrc_local
+if [ -f "$ALIX_DIR"/bashrc_local ]; then
+	. "$ALIX_DIR"/bashrc_local
 fi
