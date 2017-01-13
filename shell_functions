@@ -1,17 +1,17 @@
 # vim: set filetype=sh:
 # Basic functions
 
-function update-ssh-known-hosts () {
+function update-ssh-known-hosts {
 	echo "Updating ssh known hosts from tin.eqiad.wmnet"
 	scp tin.eqiad.wmnet:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
 }
 
-function sshaddall() {
+function sshaddall {
 	ssh-add "$HOME"/.ssh/*id_rsa
 }
 
 # Run git with tracing
-function gittrace() {
+function gittrace {
 	GIT_TRACE=1 git "$@"
 }
 
@@ -22,7 +22,7 @@ function tailpage {
 	tail -n $((LINES - 2))
 }
 
-function gerrit() {
+function gerrit {
 	host='gerrit.wikimedia.org'
 	if [ "$1" == "openstack" ]; then
 		host='review.openstack.org'
@@ -32,15 +32,16 @@ function gerrit() {
 	if [ -z "$1" ]; then
 		ARGS="--help"
 	else
-		ARGS="$@"
+		ARGS="$*"
 	fi;
 	set -x
+	# shellcheck disable=SC2029
 	ssh -p 29418 hashar@$host "gerrit $ARGS"
 	set +x
 }
 
-function telnets() {
-	openssl=`which openssl`
+function telnets {
+	openssl=$(which openssl)
 	if [ -z "$openssl" ]; then
 		echo "ERROR: openssl CLI not found." >&2
 		return 1
@@ -61,53 +62,53 @@ function telnets() {
 	fi
 }
 
-function fatalmonitor() {
+function fatalmonitor {
 	host='fluorine.eqiad.wmnet'
 	if [ "$HOSTNAME" = "$host" ]; then
 		# In case I ever get ALIX on fluorine (tip: it is not on WMF prod)
 		fatalmonitor "$@"
 	else
-		ssh -t -C fluorine.eqiad.wmnet fatalmonitor
+		ssh -t -C fluorine.eqiad.wmnet 'fatalmonitor'
 	fi
 }
 
-function 720x480() {
+function 720x480 {
 	osascript -e "tell application \"Terminal\" to set the bounds of the first window to {100, 50, 820, 530}"
 }
 
-function airport() {
+function airport {
 	 /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport "$@"
 }
 
 # Show up a pint of beer on Mac OS X :-D
 # BEER MUG (U+1F37A) -- thanks Saper for the reference
-function beer() {
+function beer {
 	echo '🍺 ';
 }
 
-function cigarette() {
+function cigarette {
 	echo '🚬';
 }
 
 # Similar as beer() but gives out three cookies
-function cookies() {
+function cookies {
 	echo '🍪 🍪 🍪';
 }
 
 # American's loves them..
-function donuts() {
+function donuts {
 	echo '🍩';
 }
 
-function bug() {
+function bug {
 	echo '🐛  <-- bug!';
 }
 
-function profit() {
+function profit {
 	echo "💶 💶 💶 ";  # banknote with euro sign
 }
 
-function jenkins() {
+function jenkins {
 	local cmd=$1
 	local changeid=${2:-"I0cbfadb4363df19f3a3ff6819280e5ccbedc50b9"}
 	shift
@@ -129,26 +130,26 @@ function jenkins() {
 	esac
 }
 
-function php-extension_dir() {
+function php-extension_dir {
 	php -r 'print ini_get("extension_dir");'
 }
 
-function php-profile() {
-	php -d xdebug.profiler_enable=1 $@
+function php-profile {
+	php -d xdebug.profiler_enable=1 "$@"
 }
 
-function php-trace() {
-	php -d xdebug.auto_trace=1 $@
+function php-trace {
+	php -d xdebug.auto_trace=1 "$@"
 }
 
-function php-trace-raw() {
-	php -d xdebug.auto_trace=1 -d xdebug.trace_format=1 $@
+function php-trace-raw {
+	php -d xdebug.auto_trace=1 -d xdebug.trace_format=1 "$@"
 }
 
-function php-vld() {
-	php -d "extension=vld.so" -d vld.active=1 -d vld.execute=0 -f $1
+function php-vld {
+	php -d "extension=vld.so" -d vld.active=1 -d vld.execute=0 -f "$1"
 }
 
-function ppv() {
-	puppet parser validate $@
+function ppv {
+	puppet parser validate "$@"
 }
