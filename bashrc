@@ -117,6 +117,9 @@ if [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
 	bind -x "\"\C-k\":\"echo -en '\033c\e[3J'\""
 fi
 
+# Disable systemctl / systemd pager which is REALLY annoying
+export SYSTEMD_PAGER=''
+
 # Source local user changes if any
 if [ -f "$ALIX_DIR"/bashrc_local ]; then
 	. "$ALIX_DIR"/bashrc_local
