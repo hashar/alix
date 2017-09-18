@@ -12,6 +12,7 @@ case "$ALIX_PLATFORM" in
 	*)
 		# On other platform, assumes GNU ls is installed
 		alias ls='ls --color=auto -F'
+		alias open='/usr/bin/xdg-open'
 	;;
 esac
 
