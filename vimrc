@@ -69,6 +69,8 @@ let g:syntastic_stl_format = '[%E{%e err, line %fe}%B{, }%W{%w warn, line %fw}]'
 autocmd BufNewFile,BufRead *.git/modules/**/COMMIT_EDITMSG setf gitcommit
 autocmd BufNewFile,BufRead *.git/modules/**/config setf gitconfig
 
+autocmd BufNewFile,BufRead */Dockerfile set et ts=4 sw=4
+
 syntax on
 set background=dark
 
