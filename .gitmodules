@@ -28,3 +28,6 @@
 [submodule "vim/csv"]
 	path = vim/csv
 	url = https://github.com/chrisbra/csv.vim
+[submodule "vim/editorconfig"]
+	path = vim/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim
