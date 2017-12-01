@@ -2,7 +2,7 @@
 " vim: tw=0 ts=4 sw=4
 " Vim color file
 " Maintainer:	Antoine Musso <hashar@free.fr>
-" Last Change:	2013 01 31
+" Last Change:	2017 12 01
 "
 " Based of pablo skin by Ron Aaron
 " * force t_Co=256
@@ -18,16 +18,17 @@ endif
 
 let g:colors_name = "hashar"
 
-highlight Comment	 ctermfg=8
+highlight Comment	 ctermfg=45
 highlight Constant	 ctermfg=13			   cterm=none
 "highlight Function   ctermfg=3
 highlight Identifier ctermfg=6
-highlight Statement  ctermfg=3			   cterm=bold
+highlight Statement  ctermfg=227		   cterm=bold
 highlight PreProc	 ctermfg=10
 highlight Type		 ctermfg=2
 highlight Special	 ctermfg=12
-highlight Error					ctermbg=9
-highlight Todo		 ctermfg=4	ctermbg=3
+highlight Error					ctermbg=160
+" TODO xxx
+highlight Todo		 ctermfg=15	ctermbg=166
 highlight Directory  ctermfg=2
 highlight StatusLine ctermfg=11 ctermbg=12 cterm=none
 highlight Normal     ctermbg=0
