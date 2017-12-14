@@ -52,6 +52,9 @@ function! s:python3_settings()
 	endif
 endfunction
 
+let g:syntastic_puppet_puppetlint_exec = 'bundle exec puppet-lint'
+let g:syntastic_puppet_puppet_exec = 'bundle exec puppet'
+
 autocmd BufRead *.py call s:python3_settings()
 
 " Stop linting puppet, Wikimedia manifests are a mess
