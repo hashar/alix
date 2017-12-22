@@ -121,6 +121,8 @@ autocmd BufRead *.js.erb set ft=eruby.javascript
 autocmd BufRead *.py.erb set ft=eruby.python
 autocmd BufRead *.sh.erb set ft=eruby.sh
 
+autocmd BufRead Dockerfile.template set ft=dockerfile
+
 " YAML tweak
 autocmd Syntax yaml set foldmethod=indent
 
