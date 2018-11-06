@@ -16,6 +16,12 @@ case "$ALIX_PLATFORM" in
 	;;
 esac
 
+# rubygems-integration is broken
+# * Fails to override bin_path https://bugs.debian.org/710814
+# * Gem.datadir does not return proper debianlized value
+#   https://bugs.debian.org/845045
+alias bundle="DEBIAN_DISABLE_RUBYGEMS_INTEGRATION=1 bundle"
+
 alias ll='ls -l'
 alias tree='tree -ACF'
 
