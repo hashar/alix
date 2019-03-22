@@ -28,15 +28,9 @@ function gerrit {
 		host='review.openstack.org'
 		shift
 	fi;
-
-	if [ -z "$1" ]; then
-		ARGS="--help"
-	else
-		ARGS="$*"
-	fi;
 	set -x
 	# shellcheck disable=SC2029
-	ssh -p 29418 hashar@$host "gerrit $ARGS"
+	ssh -p 29418 hashar@$host 'gerrit' "${@:---help}"
 	set +x
 }
 
