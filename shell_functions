@@ -147,3 +147,8 @@ function php-vld {
 function ppv {
 	puppet parser validate "$@"
 }
+
+function whichpackage {
+	file="$(which "${@}")"
+	dpkg --search "$file"
+}
