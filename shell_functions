@@ -6,6 +6,10 @@ function update-ssh-known-hosts {
 	scp deploy1001.eqiad.wmnet:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
 }
 
+function dumpargs {
+	python3 -c 'import pprint, sys; pprint.pprint(sys.argv[1:])' "${@}"
+}
+
 function sshaddall {
 	ssh-add "$HOME"/.ssh/*id_rsa
 }
