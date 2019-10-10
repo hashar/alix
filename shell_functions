@@ -31,6 +31,9 @@ function gerrit {
 	if [ "$1" == "openstack" ]; then
 		host='review.openstack.org'
 		shift
+	elif [ "$1" == "replica" ]; then
+		host='gerrit-replica.wikimedia.org'
+		shift
 	fi;
 	set -x
 	# shellcheck disable=SC2029
