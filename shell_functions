@@ -1,4 +1,4 @@
-# vim: set filetype=sh:
+#!/bin/bash
 # Basic functions
 
 function update-ssh-known-hosts {
