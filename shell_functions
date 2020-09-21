@@ -35,9 +35,23 @@ function gerrit {
 		host='gerrit-replica.wikimedia.org'
 		shift
 	fi;
+
+	cmd=("${@:---help}")
+	case "$1" in
+		( 'queue' | 'queues' )
+			cmd=(show-queue --by-queue --wide)
+		;;
+		( 'cache' | 'caches' )
+			cmd=(show-caches)
+		;;
+		( 'threads' )
+			cmd=(show-caches --show-threads)
+		;;
+	esac
+
 	set -x
 	# shellcheck disable=SC2029
-	ssh -p 29418 hashar@$host 'gerrit' "${@:---help}"
+	ssh -p 29418 hashar@$host 'gerrit' "${cmd[@]}"
 	set +x
 }
 
