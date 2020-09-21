@@ -173,3 +173,9 @@ function whichpackage {
 	file="$(which "${@}")"
 	dpkg --search "$file"
 }
+
+function docker-releng {
+	set -x
+	docker run --rm -it --user=root --entrypoint=bash docker-registry.wikimedia.org/releng/"$1"
+	set +x
+}
