@@ -10,6 +10,10 @@ function dumpargs {
 	python3 -c 'import pprint, sys; pprint.pprint(sys.argv[1:])' "${@}"
 }
 
+function logspam-watch {
+	ssh -t -C mwlog1002.eqiad.wmnet /usr/local/bin/logspam-watch
+}
+
 function sshaddall {
 	ssh-add "$HOME"/.ssh/*id_rsa
 }
