@@ -2,8 +2,8 @@
 # Basic functions
 
 function update-ssh-known-hosts {
-	echo "Updating ssh known hosts from deploy1001.eqiad.wmnet"
-	scp deploy1001.eqiad.wmnet:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
+	echo "Updating ssh known hosts from deployment.eqiad.wmnet"
+	scp deployment.eqiad.wmnet:/etc/ssh/ssh_known_hosts ~/.ssh/known_hosts-wmf
 }
 
 function dumpargs {
@@ -78,12 +78,13 @@ function telnets {
 }
 
 function fatalmonitor {
-	host='mwlog1001.eqiad.wmnet'
+	host='mwlog1002.eqiad.wmnet'
 	if [ "$HOSTNAME" = "$host" ]; then
-		# In case I ever get ALIX on fluorine (tip: it is not on WMF prod)
+		# In case I ever get ALIX on mwlog
+		# tip: ALIX is not on WMF prod
 		fatalmonitor "$@"
 	else
-		ssh -t -C mwlog1001.eqiad.wmnet 'fatalmonitor'
+		ssh -t -C mwlog1002.eqiad.wmnet 'fatalmonitor'
 	fi
 }
 
