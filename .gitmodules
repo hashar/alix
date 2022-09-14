@@ -4,9 +4,6 @@
 [submodule "vim/puppet"]
 	path = vim/puppet
 	url = https://github.com/rodjek/vim-puppet.git
-[submodule "vim/tabular"]
-	path = vim/tabular
-	url = https://github.com/godlygeek/tabular.git
 [submodule "vim/powerline"]
 	path = vim/powerline
 	url = https://github.com/Lokaltog/powerline.git
