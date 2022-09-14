@@ -184,3 +184,7 @@ function docker-releng {
 	docker run --rm -it --user=root --entrypoint=bash docker-registry.wikimedia.org/releng/"$1"
 	set +x
 }
+
+function bazel-list-targets {
+	bazel query 'attr(visibility, "//visibility:public", //...)'
+}
