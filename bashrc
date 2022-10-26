@@ -117,6 +117,10 @@ if [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
 	bind -x "\"\C-k\":\"echo -en '\033c\e[3J'\""
 fi
 
+export PYENV_ROOT=/home/hashar/projects/pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Disable systemctl / systemd pager which is REALLY annoying
 export SYSTEMD_PAGER=''
 
