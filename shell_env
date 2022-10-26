@@ -42,3 +42,5 @@ fi
 
 # fancy MySQL prompt
 export MYSQL_PS1="(\u@\h) [\d]> "
+
+export MW_INSTALL_PATH=/home/hashar/projects/mediawiki/core
