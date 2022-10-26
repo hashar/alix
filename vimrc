@@ -7,7 +7,7 @@ set backspace=2
 
 set runtimepath^=$ALIX_DIR/vim
 set rtp+=$ALIX_DIR/vim/powerline/powerline/bindings/vim
-call pathogen#infect("$ALIX_DIR/vim")
+execute pathogen#infect("$ALIX_DIR/vim/{}")
 
 " always show the powerline
 set laststatus=2
