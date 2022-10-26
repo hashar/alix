@@ -46,16 +46,17 @@ let g:syntastic_style_error_symbol='!!'
 let g:syntastic_phpmd_disable="1"
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
 
-function! s:python3_settings()
-	if getline(1) =~# '^#!.*python3'
+function! s:python_exec_settings()
+	if getline(1) =~# '^#!.*python2'
+		let g:syntastic_python_python_exec = 'python2'
+	else
 		let g:syntastic_python_python_exec = 'python3'
 	endif
 endfunction
 
 let g:syntastic_puppet_puppetlint_exec = 'bundle exec puppet-lint'
 let g:syntastic_puppet_puppet_exec = 'bundle exec puppet'
-
-autocmd BufRead *.py call s:python3_settings()
+autocmd BufRead *.py call s:python_exec_settings()
 
 " Stop linting puppet, Wikimedia manifests are a mess
 "let g:syntastic_puppet_lint_disable="1"
