@@ -10,7 +10,8 @@ fi
 
 # We looove Debian
 # http://qa.debian.org/developer.php?login=hashar@free.fr
-export DEBEMAIL="Antoine Musso <hashar@free.fr>"
+export DEBFULLNAME="Antoine Musso"
+export DEBEMAIL="hashar@free.fr"
 
 #################### COLORED MAN ######################################
 # less env variables to make less a bit nicer to read
