@@ -15,7 +15,7 @@ set laststatus=2
 set noshowmode
 
 " Avoid powerline x second timeout
-" https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
+" https://powerline.readthedocs.io/en/master/tips-and-tricks.html
 if ! has('gui_running')
 	set ttimeoutlen=10
 	augroup FastEscape
