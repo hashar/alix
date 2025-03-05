@@ -5,6 +5,9 @@
 " fix up backspace key with vim coming from homebrew
 set backspace=2
 
+" For csv plugin
+filetype plugin on
+
 set runtimepath^=$ALIX_DIR/vim
 set rtp+=$ALIX_DIR/vim/powerline/powerline/bindings/vim
 execute pathogen#infect("$ALIX_DIR/vim/{}")
