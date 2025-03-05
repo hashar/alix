@@ -47,3 +47,6 @@ export MYSQL_PS1="(\u@\h) [\d]> "
 export MW_INSTALL_PATH=/home/hashar/projects/mediawiki/core
 
 export PIP_BREAK_SYSTEM_PACKAGES=1
+
+# Running podman rootless (systemctl --user status podman)
+export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
