@@ -121,6 +121,27 @@ export PYENV_ROOT=/home/hashar/projects/pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+
+export PATH="/home/hashar/.rbenv/shims:${PATH}"
+export RBENV_SHELL=bash
+source '/usr/lib/rbenv/libexec/../completions/rbenv.bash'
+# shellcheck disable=SC2218
+command rbenv rehash 2>/dev/null
+rbenv() {
+  local command
+  command="${1:-}"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(rbenv "sh-$command" "$@")";;
+  *)
+    command rbenv "$command" "$@";;
+  esac
+}
+
 # Disable systemctl / systemd pager which is REALLY annoying
 export SYSTEMD_PAGER=''
 
