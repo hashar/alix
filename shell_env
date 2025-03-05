@@ -45,3 +45,5 @@ fi
 export MYSQL_PS1="(\u@\h) [\d]> "
 
 export MW_INSTALL_PATH=/home/hashar/projects/mediawiki/core
+
+export PIP_BREAK_SYSTEM_PACKAGES=1
