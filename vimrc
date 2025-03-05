@@ -75,7 +75,7 @@ let g:syntastic_stl_format = '[%E{%e err, line %fe}%B{, }%W{%w warn, line %fw}]'
 autocmd BufNewFile,BufRead *.git/modules/**/COMMIT_EDITMSG setf gitcommit
 autocmd BufNewFile,BufRead *.git/modules/**/config setf gitconfig
 
-autocmd BufNewFile,BufRead */Dockerfile set et ts=4 sw=4
+autocmd BufNewFile,BufRead */Dockerfile* set et ts=4 sw=4 ft=dockerfile
 
 syntax on
 set background=dark
@@ -106,6 +106,9 @@ colors hashar
 " apache conf tweaks
 autocmd Syntax apache set foldmethod=indent
 
+" Jenkins Jelly files are like XML
+autocmd BufRead *.jelly set ft=xml
+
 " puppet tweak
 autocmd Syntax puppet set foldmethod=indent
 
@@ -123,8 +126,6 @@ autocmd BufRead *.ini.erb set ft=eruby.dosini
 autocmd BufRead *.js.erb set ft=eruby.javascript
 autocmd BufRead *.py.erb set ft=eruby.python
 autocmd BufRead *.sh.erb set ft=eruby.sh
-
-autocmd BufRead Dockerfile.template set ft=dockerfile
 
 " YAML tweak
 autocmd Syntax yaml set foldmethod=indent
@@ -168,7 +169,9 @@ au Syntax php
 hi def link doxygenComment Comment
 
 " Python scripts usually have 4 spaces for indentation
-au FileType python setlocal tabstop=4 expandtab sw=4 softtabstop=4 foldmethod=indent
+au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4 foldmethod=indent
+" Bazel stuff is similar
+au FileType bzl setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 " ###### FOLDING ############################################################
 set foldmethod=syntax
