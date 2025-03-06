@@ -50,3 +50,10 @@ export PIP_BREAK_SYSTEM_PACKAGES=1
 
 # Running podman rootless (systemctl --user status podman)
 export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+
+# Buildkit defaults to dark blue which is barely readable against a dark
+# background.
+export BUILDKIT_COLORS="run=cyan"
+
+# Give more log lines, default being 6
+export BUILDKIT_TTY_LOG_LINES=12
