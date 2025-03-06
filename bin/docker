@@ -14,7 +14,7 @@ function inArray() {
 
 if [[ "${1:-}" == compose ]]; then
 	shift;
-	docker-compose "${@}"
+	exec /usr/libexec/docker/cli-plugins/docker-compose "${@}"
 elif [[ ${DOCKER_BUILDKIT:-0} -eq 1 ]] || inArray "buildx" "$@"; then
 
 	args=()
