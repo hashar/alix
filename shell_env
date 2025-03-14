@@ -57,3 +57,7 @@ export BUILDKIT_COLORS="run=cyan"
 
 # Give more log lines, default being 6
 export BUILDKIT_TTY_LOG_LINES=12
+
+# Instruct Python requests to use the system certificate. That saves one from
+# having to rely on certifi.
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
