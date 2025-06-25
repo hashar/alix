@@ -44,7 +44,8 @@ fi
 # fancy MySQL prompt
 export MYSQL_PS1="(\u@\h) [\d]> "
 
-export MW_INSTALL_PATH=/home/hashar/projects/mediawiki/core
+# It can already be set, eg by `quibble -c bash`
+export MW_INSTALL_PATH=${MW_INSTALL_PATH:-/home/hashar/projects/mediawiki/core}
 
 export PIP_BREAK_SYSTEM_PACKAGES=1
 
