@@ -40,7 +40,11 @@ function gerrit {
 		shift
 	fi;
 
+	# Default: gerrit --help
+	sshModule='gerrit'
+
 	cmd=("${@:---help}")
+
 	case "$1" in
 		( 'queue' | 'queues' )
 			cmd=(show-queue --by-queue --wide)
@@ -51,11 +55,16 @@ function gerrit {
 		( 'threads' )
 			cmd=(show-caches --show-threads)
 		;;
+		( 'replication' )
+			sshModule=replication
+			shift
+			cmd=( "$@" )
+		;;
 	esac
 
 	set -x
 	# shellcheck disable=SC2029
-	ssh -p 29418 hashar@$host 'gerrit' "${cmd[@]}"
+	ssh -p 29418 hashar@$host "$sshModule" "${cmd[@]}"
 	set +x
 }
 
