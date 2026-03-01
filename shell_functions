@@ -52,6 +52,9 @@ function gerrit {
 		( 'cache' | 'caches' )
 			cmd=(show-caches)
 		;;
+		( 'connections' )
+			cmd=(show-connections --wide)
+		;;
 		( 'threads' )
 			cmd=(show-caches --show-threads)
 		;;
