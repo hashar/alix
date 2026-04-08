@@ -183,6 +183,14 @@ let perl_fold_blocks = 1
 "   4 ifdofor
 let sh_fold_enabled = 7
 
+" Java
+" See :help java.vim
+
+" highlight function names ...
+let g:java_highlight_functions = "style"
+" ... but not their arguments
+let g:java_highlight_signature = 1
+
 " ruby
 " https://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-omni.txt
 " https://github.com/vim-ruby/vim-ruby/blob/master/doc/ft-ruby-syntax.txt
