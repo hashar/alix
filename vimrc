@@ -38,6 +38,30 @@ let g:syntastic_style_error_symbol='!!'
 let g:syntastic_phpmd_disable="1"
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
 
+"""""""""""""""""""""""""""""""""
+" ALE, Asynchronous Lint Engine "
+"""""""""""""""""""""""""""""""""
+" help ale-completion
+
+"let g:ale_completion_enabled = 1
+"let g:ale_completion_delay = 10
+
+" Use ALE's function for omnicompletion.
+set omnifunc=ale#completion#OmniFunc  " <C-x><C-o>
+
+let g:ale_php_phpactor_executable = '/home/hashar/projects/phpactor/bin/phpactor'
+let g:ale_phan_executable = '/home/hashar/projects/phan/phan_client'
+let g:ale_php_phan_use_client = 1
+let g:ale_completion_enabled = 1
+
+" Only lint on saving
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+"
+"inoremap <silent> <C-Space> <C-\><C-O>:ALEComplete<CR>
+"imap <C-Space> <Plug>(ale_complete)
+
 function! s:python_exec_settings()
 	if getline(1) =~# '^#!.*python2'
 		let g:syntastic_python_python_exec = 'python2'

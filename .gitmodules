@@ -1,6 +1,3 @@
-[submodule "vim/syntastic"]
-	path = vim/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/puppet"]
 	path = vim/puppet
 	url = https://github.com/rodjek/vim-puppet.git
@@ -25,3 +22,6 @@
 [submodule "vim/editorconfig"]
 	path = vim/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "vim/ale"]
+	path = vim/ale
+	url = https://github.com/dense-analysis/ale
