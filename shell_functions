@@ -183,6 +183,12 @@ function ppv {
 	puppet parser validate "$@"
 }
 
+function shellchecker {
+	podman run -it \
+		-v "$(pwd)":/src \
+		docker-registry.wikimedia.org/releng/shellcheck:0.10.0-1
+}
+
 function whichpackage {
 	file="$(which "${@}")"
 	dpkg --search "$file"
