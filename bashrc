@@ -46,13 +46,6 @@ export GIT_PS1_STATESEPARATOR="|"
 # Colored dirty state
 export GIT_PS1_SHOWCOLORHINTS=1
 
-# __git_ps1 might not be defined in older git versions
-if [ "function" != "$(type -t __git_ps1)" ]; then
-	function __git_ps1 {
-		git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
-	}
-fi
-
 # Wrapper to look for git branches
 function parse_repo_branch {
 	local GIT_BRANCH
